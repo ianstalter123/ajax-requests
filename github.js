@@ -4,6 +4,10 @@ console.log("script is live");
 var input = document.querySelector('input')
 	
 
+	$("#searchform").submit(function(e){
+    return false;
+	});
+
 input.addEventListener('keyup',function(e) {
 
 
@@ -11,6 +15,7 @@ var text = $('input').val();
 var test = $('#username').text();
 	if(e.which === 13)
 	{
+
 		$("#repositories").text("");
 
 	 var str = "https://api.github.com/search/users?q=" + text;
