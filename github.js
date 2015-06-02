@@ -37,7 +37,8 @@ var test = $('#username').text();
 
      	$("#repositories").append("<a href=" + item.html_url + ">" + item.name + "</a> - " + "<span>" + item.language + "</span><br>");
      })
-     
+     $("input").val("")
+     $('input').focus();
      //$('#repositories').html(result.items[0]);
    
     });
