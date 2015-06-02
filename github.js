@@ -11,6 +11,7 @@ var text = $('input').val();
 var test = $('#username').text();
 	if(e.which === 13)
 	{
+		$("#repositories").text("");
 
 	 var str = "https://api.github.com/search/users?q=" + text;
 	 $.get( str,
@@ -25,14 +26,18 @@ var test = $('#username').text();
      });
      
     
-     var repo = "https://api.github.com/search/repositories?q=user%3A"+test;
+     var repo = "https://api.github.com/search/repositories?q=user%3A"+text;
      console.log(repo);
       $.get( repo,
      function( data ) {
      var string = JSON.stringify(data);
      var result = JSON.parse(string);
 
-console.log(result);
+     result.items.forEach(function(item){
+
+     	$("#repositories").append("<a href=" + item.html_url + ">" + item.name + "</a> - " + "<span>" + item.language + "</span><br>");
+     })
+     
      //$('#repositories').html(result.items[0]);
    
     });
