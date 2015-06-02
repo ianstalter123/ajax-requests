@@ -5,8 +5,10 @@ var input = document.querySelector('input')
 	
 
 	$("#searchform").submit(function(e){
-    return false;
-});
+
+    e.preventDefault();
+	});
+
 
 input.addEventListener('keyup',function(e) {
 
