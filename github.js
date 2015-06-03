@@ -1,8 +1,9 @@
 $(function() {
 console.log("script is live");
 
+
 var input = document.querySelector('input')
-	
+input.focus()
 
 	$("#searchform").submit(function(e){
 
